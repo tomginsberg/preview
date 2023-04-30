@@ -55,7 +55,12 @@ body {
     position: fixed;
     width: 100%;
     height: 200%; /* Increase the height to create the parallax effect */
-    z-index: -1;
+    z-index: 9999;
     overflow: hidden; /* Hide the overflow to avoid scrollbar issues */
+  }
+  
+  .main-content {
+    position: relative; /* Make sure the element has a position property other than 'static' */
+    z-index: 1; /* This value should be higher than the z-index of #particles-wrapper */
   }
   
