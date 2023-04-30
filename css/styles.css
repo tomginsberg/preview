@@ -12,8 +12,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
     z-index: 9999;
+    background-position: 50% 50%;
 }
 
 
@@ -49,3 +50,12 @@ body {
 .z-depth-5{
     z-index: 10000;
 }
+
+#particles-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 200%; /* Increase the height to create the parallax effect */
+    z-index: -1;
+    overflow: hidden; /* Hide the overflow to avoid scrollbar issues */
+  }
+  

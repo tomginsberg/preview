@@ -9,15 +9,15 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>
-    <script src="js/mathjax.js"></script>
-
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>BEIT Canada</title>
 </head>
 
 <body class="bg-gray-900 text-white min-h-screen">
-    <div id="particles-js"></div>
+    <div id="particles-wrapper">
+        <div id="particles-js"></div>
+    </div>
+
 
 
     <!-- Header -->
@@ -25,7 +25,8 @@
         <div class="container mx-auto flex justify-between items-center z-depth-5">
             <div>
                 <h1 class="text-4xl font-bold">
-                    <span class="inline-block">$\langle b \vert e^{it}\ \mathrm{Canada}$</span>
+                    <!-- <span class="inline-block">$\langle b \vert e^{it}\ \mathrm{Canada}$</span> -->
+                    <img src="media/beit-canada.svg" alt="Logo" class="h-10">
                 </h1>
             </div>
             <nav>
@@ -59,7 +60,8 @@
             <div class="p-6 rounded shadow job-posting">
                 <h3 class="text-2xl font-bold mb-2">Quantum Algorithms</h3>
                 <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
-                <p>Are you a mathematician or computer scientist passionate about developing novel quantum algorithms that help bring us closer to achieving a true quantum advantage?</p>
+                <p>Are you a mathematician or computer scientist passionate about developing novel quantum algorithms
+                    that help bring us closer to achieving a true quantum advantage?</p>
                 <div class="mt-4">
                     <a href="apply.html?position=Quantum Algorithms" class="text-yellow-400 hover:underline">Apply!</a>
                 </div>
@@ -68,7 +70,8 @@
             <div class="p-6 rounded shadow job-posting">
                 <h3 class="text-2xl font-bold mb-2">Quantum Error Correction</h3>
                 <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
-                <p>Do you excel in quantum error correction research, specifically with a focus on topological error correction, photonic hardware, and measurement based quantum computing?</p>
+                <p>Do you excel in quantum error correction research, specifically with a focus on topological error
+                    correction, photonic hardware, and measurement based quantum computing?</p>
                 <div class="mt-4">
                     <a href="apply.html?position=Quantum Error Correction"
                         class="text-yellow-400 hover:underline">Apply!</a>
@@ -79,7 +82,8 @@
                 <h3 class="text-2xl font-bold mb-2">Quantum Simulation</h3>
                 <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
                 <p>
-                    Are you physicist with a focus on quantum simulation of molecular properties and hamiltonian dynamics that is looking to expand the limits of quantum computation?</p>
+                    Are you physicist with a focus on quantum simulation of molecular properties and hamiltonian
+                    dynamics that is looking to expand the limits of quantum computation?</p>
                 <div class="mt-4">
                     <a href="apply.html?position=Quantum Simulation" class="text-yellow-400 hover:underline">Apply!</a>
                 </div>
@@ -104,6 +108,7 @@
     <!-- Particles -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/particle-config.js"></script>
+    <script src="js/parallax.js"></script>
 
 </body>
 
