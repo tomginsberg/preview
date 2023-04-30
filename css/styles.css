@@ -58,9 +58,3 @@ body {
     z-index: 9999;
     overflow: hidden; /* Hide the overflow to avoid scrollbar issues */
   }
-  
-  .main-content {
-    position: relative; 
-    z-index: 10000; 
-  }
-  
