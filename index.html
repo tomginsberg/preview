@@ -1,270 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            },
-            startup: {
-                ready: () => {
-                    MathJax.startup.defaultReady();
-                    MathJax.startup.promise.then(() => {
-                        document.querySelector('#loading').style.display = 'none';
-                    });
-                }
-            }
-        };
-    </script>
-
     <link rel="stylesheet" type="text/css"
-          href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
-    <style>
+        href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
 
-        body {
-            background-size: 400% 400%;
-            background-image: radial-gradient(#081f52, #000000, #081f52, #0b3d91);
-            animation: animate 60s ease infinite;
-            height: 100vh;
-            width: 100%;
-            font-family: 'Computer Modern Sans', sans-serif;
-        }
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>
+    <script src="js/mathjax.js"></script>
 
-        #particles-js {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* z-index: -1; */
-            z-index: 9999;
-        }
-
-
-        @keyframes animate {
-            0% {
-                background-position: 0 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0 50%;
-            }
-        }
-
-        .gradient-text {
-            background-image: linear-gradient(45deg, #081f52, #bac8dc, #081f52, #065ae5);
-            background-size: 400% 400%;
-            animation: animate 10s ease infinite;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            z-index: 10000;
-        }
-
-        .job-posting{
-            background-image: linear-gradient(45deg,#081f52, #000000, #081f52, #0b3d91);
-            background-size: 400% 400%;
-            background-position: 0 50%;
-            z-index: 10000;
-        }
-
-    </style>
-
-
-    <title>BEIT Ca</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>BEIT Canada</title>
 </head>
+
 <body class="bg-gray-900 text-white min-h-screen">
-<div id="particles-js"></div>
+    <div id="particles-js"></div>
 
 
-<!-- Header -->
-<header class="container mx-auto px-4 py-6 flex justify-between items-center" id="main-header">
-    <div class="container mx-auto flex justify-between items-center">
-        <div>
-            <h1 class="text-4xl font-bold">
-                <span class="inline-block">$\langle b \vert e^{it}\ \mathrm{Canada}$</span>
-            </h1>
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center z-depth-5" id="main-header">
+        <div class="container mx-auto flex justify-between items-center z-depth-5">
+            <div>
+                <h1 class="text-4xl font-bold">
+                    <span class="inline-block">$\langle b \vert e^{it}\ \mathrm{Canada}$</span>
+                </h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="https://beit.tech/" class="hover:text-yellow-400 z-depth-5">BEIT Home</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="flex space-x-4">
-                <li><a href="https://beit.tech/" class="hover:text-yellow-400">BEIT Home</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
 
-<!-- Intro Section -->
-<section class="container mx-auto px-4 py-16" id="about">
-    <div class="text-center">
-        <h2 class="text-5xl font-bold mb-6 gradient-text">Expanding our Mission for Quantum Advantage</h2>
-        <p class="text-xl leading-relaxed max-w-3xl mx-auto">
-            <a href="https://beit.tech/" class="text-yellow-400 hover:underline">BEIT</a>
-            is building a brand new quantum computing research team in downtown Toronto.
-            Our mission is to optimize the performance of quantum algorithms,
-            build more efficient error correction schemes,
-            and push the limits of quantum simulation.
-        </p>
-    </div>
-</section>
+    <!-- Intro Section -->
+    <section class="container mx-auto px-4 py-16" id="about">
+        <div class="text-center">
+            <h2 class="text-5xl font-bold mb-6 gradient-text">Expanding our Mission for Quantum Advantage</h2>
+            <p class="text-xl leading-relaxed max-w-3xl mx-auto">
+                <a href="https://beit.tech/" class="text-yellow-400 hover:underline">BEIT</a>
+                is building a brand new quantum computing research team in downtown Toronto.
+                Our mission is to develop optimized quantum algorithms,
+                build more efficient error correction schemes,
+                and push the limits of quantum simulation.
+            </p>
+        </div>
+    </section>
 
-<!-- Careers Section -->
-<section class="container mx-auto px-4 py-16" id="careers">
-    <h2 class="text-4xl font-bold text-center mb-10">Join Us!</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Careers Section -->
+    <section class="container mx-auto px-4 py-16" id="careers">
+        <h2 class="text-4xl font-bold text-center mb-10">Join Us!</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <div class="p-6 rounded shadow job-posting">
-            <h3 class="text-2xl font-bold mb-2">Quantum Algorithms Researcher</h3>
-            <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor ligula magna, id mollis arcu
-                malesuada ut. Proin sit amet arcu non odio tristique suscipit. Pellentesque habitant morbi tristique
-                senectus et netus et malesuada fames ac turpis egestas.</p>
-            <div class="mt-4">
-                <a href="#" class="text-yellow-400 hover:underline">Apply via LinkedIn</a>
+            <div class="p-6 rounded shadow job-posting">
+                <h3 class="text-2xl font-bold mb-2">Quantum Algorithms</h3>
+                <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
+                <p>Are you a mathematician or computer scientist passionate about developing novel quantum algorithms that help bring us closer to achieving a true quantum advantage?</p>
+                <div class="mt-4">
+                    <a href="apply.html?position=Quantum Algorithms" class="text-yellow-400 hover:underline">Apply!</a>
+                </div>
+            </div>
+
+            <div class="p-6 rounded shadow job-posting">
+                <h3 class="text-2xl font-bold mb-2">Quantum Error Correction</h3>
+                <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
+                <p>Do you excel in quantum error correction research, specifically with a focus on topological error correction, photonic hardware, and measurement based quantum computing?</p>
+                <div class="mt-4">
+                    <a href="apply.html?position=Quantum Error Correction"
+                        class="text-yellow-400 hover:underline">Apply!</a>
+                </div>
+            </div>
+
+            <div class="p-6 rounded shadow job-posting">
+                <h3 class="text-2xl font-bold mb-2">Quantum Simulation</h3>
+                <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
+                <p>
+                    Are you physicist with a focus on quantum simulation of molecular properties and hamiltonian dynamics that is looking to expand the limits of quantum computation?</p>
+                <div class="mt-4">
+                    <a href="apply.html?position=Quantum Simulation" class="text-yellow-400 hover:underline">Apply!</a>
+                </div>
             </div>
         </div>
-
-        <div class="p-6 rounded shadow job-posting">
-            <h3 class="text-2xl font-bold mb-2">Quantum Error Correction Researcher</h3>
-            <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor ligula magna, id mollis arcu
-                malesuada ut. Proin sit amet arcu non odio tristique suscipit. Pellentesque habitant morbi tristique
-                senectus et netus et malesuada fames ac turpis egestas.</p>
-            <div class="mt-4">
-                <a href="#" class="text-yellow-400 hover:underline">Apply via LinkedIn</a>
+        <br>
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-10">
+            <div class="text-center z-depth-5">
+                <p>Have another position in mind? <a href="apply.html?position=Other"
+                        class="text-yellow-400 hover:underline">Tell us more!</a></p>
             </div>
         </div>
+    </section>
 
-        <div class="p-6 rounded shadow job-posting">
-            <h3 class="text-2xl font-bold mb-2">Quantum Simulation Researcher</h3>
-            <p class="text-gray-400 mb-4">Full-time, Toronto, Canada</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor ligula magna, id mollis arcu
-                malesuada ut. Proin sit amet arcu non odio tristique suscipit. Pellentesque habitant morbi tristique
-                senectus et netus et malesuada fames ac turpis egestas.</p>
-            <div class="mt-4">
-                <a href="#" class="text-yellow-400 hover:underline">Apply via LinkedIn</a>
-            </div>
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-6">
+        <div class="text-center">
+            <p>&copy; BEIT Canada Inc. All rights reserved.</p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<footer class="container mx-auto px-4 py-6">
-    <div class="text-center">
-        <p>&copy; BEIT Canada Inc. All rights reserved.</p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<script>
-    /* ---- particles.js config ---- */
-
-    particlesJS("particles-js", {
-        "particles": {
-            "number": {
-                "value": 100,
-                "density": {
-                    "enable": true,
-                    "value_area": 1000
-                }
-            },
-            "color": {
-                "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
-            },
-
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#fff"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                },
-                "image": {
-                    "src": "img/github.svg",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "opacity": {
-                "value": 0.6,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 2,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 120,
-                "color": "#ffffff",
-                "opacity": 0.4,
-                "width": 1
-            },
-        },
-        "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-}
-);
-</script>
-
+    <!-- Particles -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particle-config.js"></script>
 
 </body>
+
 </html>

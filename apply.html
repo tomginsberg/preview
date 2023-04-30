@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>
+
+    <script src="js/mathjax.js"></script>
+</head>
+<style>
+    body {
+        height: 100vh;
+        width: 100%;
+        font-family: 'Computer Modern Sans', sans-serif;
+    }
+</style>
+
+<body class="bg-gray-100">
+    <div id="particles-js"></div>
+    <div class="container mx-auto py-12 px-4">
+        <h1 class="text-3xl font-bold mb-8"><span class="inline-block">$\langle b \vert e^{it}$</span><br><br>Work with
+            Us!</h1>
+        <form id="jobApplicationForm">
+            <div class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input id="name" name="name" type="text" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
+                    <select id="position" name="position" class="mt-1 w-full p-2 border border-gray-300 rounded-md"
+                        disabled>
+                        <option value="Quantum Algorithms">Quantum Algorithms</option>
+                        <option value="Quantum Error Correction">Quantum Error Correction</option>
+                        <option value="Quantum Simulation">Quantum Simulation</option>
+                    </select>
+                </div>
+                <div id="otherPositionContainer" class="hidden">
+                    <label for="otherPosition" class="block text-sm font-medium text-gray-700">Tell us what role you are
+                        interested in</label>
+                    <input id="otherPosition" name="otherPosition" type="text"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+
+                <div>
+                    <label for="website" class="block text-sm font-medium text-gray-700">Personal Website
+                        (Optional)</label>
+                    <input id="website" name="website" type="url"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="linkedin" class="block text-sm font-medium text-gray-700">LinkedIn Profile
+                        (Optional)</label>
+                    <input id="linkedin" name="linkedin" type="url"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="google_scholar" class="block text-sm font-medium text-gray-700">Google Scholar
+                        (Optional)</label>
+                    <input id="google_scholar" name="google_scholar" type="url"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="quantum_experience" class="block text-sm font-medium text-gray-700">Years of Experience
+                        in Quantum Computing</label>
+                    <input id="quantum_experience" name="quantum_experience" type="number" min="0"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="patent_experience" class="block text-sm font-medium text-gray-700">Years of Experience
+                        in Patent Applications</label>
+                    <input id="patent_experience" name="patent_experience" type="number" min="0"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="highest_degree" class="block text-sm font-medium text-gray-700">Highest Degree
+                        Obtained</label>
+                    <input id="highest_degree" name="highest_degree" type="text"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label for="skills" class="block text-sm font-medium text-gray-700">Additional Comments</label>
+                    <textarea id="skills" name="skills" rows="4"
+                        class="mt-1 w-full p-2 border border-gray-300 rounded-md"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Review Application Email
+                </button>
+                <p>Please review your application email and attach your CV.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("jobApplicationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let position = document.getElementById("position").value;
+            if (position === "Other") {
+                position = document.getElementById("otherPosition").value;
+            }
+            let website = document.getElementById("website").value;
+            let linkedin = document.getElementById("linkedin").value;
+            let google_scholar = document.getElementById("google_scholar").value;
+            let quantum_experience = document.getElementById("quantum_experience").value;
+            let patent_experience = document.getElementById("patent_experience").value;
+            let highest_degree = document.getElementById("highest_degree").value;
+            let skills = document.getElementById("skills").value;
+            let email = "tom@beit.tech";
+            let subject = `Job Application - ${name}`;
+            let body = `Name: ${name}\n\nPosition: ${position}\n\nPersonal Website: ${website}\n\nLinkedIn Profile: ${linkedin}\n\nGoogle Scholar: ${google_scholar}\n\nYears of Experience in Quantum Computing: ${quantum_experience}\n\nYears of Experience in Patent Applications: ${patent_experience}\n\nHighest Degree Obtained: ${highest_degree}\n\nAdditional Comments:\n${skills}\n\n*Please Attach Your CV to This Email*`;
+            let mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        });
+
+        document.getElementById("position").addEventListener("change", function (event) {
+            if (event.target.value === "Other") {
+                document.getElementById("otherPositionContainer").classList.remove("hidden");
+            } else {
+                document.getElementById("otherPositionContainer").classList.add("hidden");
+            }
+        });
+
+        function getQueryParam(param) {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(param);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const positionQueryParam = getQueryParam("position");
+            if (positionQueryParam) {
+                const positionSelect = document.getElementById("position");
+                const positionExists = Array.from(positionSelect.options).some(option => option.value === positionQueryParam);
+                if (positionExists) {
+                    positionSelect.value = positionQueryParam;
+                } else {
+                    positionSelect.remove(); // Remove the position dropdown
+
+                    // Create a new hidden input with the name "position" and the value from the query parameter
+                    const hiddenPositionInput = document.createElement("input");
+                    hiddenPositionInput.type = "hidden";
+                    hiddenPositionInput.name = "position";
+                    hiddenPositionInput.value = positionQueryParam;
+                    document.getElementById("jobApplicationForm").appendChild(hiddenPositionInput);
+
+                    // Show the custom position input with the position from the query parameter
+                    document.getElementById("otherPositionContainer").classList.remove("hidden");
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
