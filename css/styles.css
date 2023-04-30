@@ -60,7 +60,7 @@ body {
   }
   
   .main-content {
-    /* position: relative; Make sure the element has a position property other than 'static' */
-    z-index: 10000; /* This value should be higher than the z-index of #particles-wrapper */
+    position: relative; 
+    z-index: 10000; 
   }
   
