@@ -100,10 +100,15 @@
         document.getElementById("jobApplicationForm").addEventListener("submit", function (event) {
             event.preventDefault();
             let name = document.getElementById("name").value;
-            let position = document.getElementById("position").value;
-            if (position === "Other") {
+            // check is position is null
+            let position = document.getElementById("position");
+            if (position) {
+                position = position.value;
+            } else {
                 position = document.getElementById("otherPosition").value;
             }
+
+
             let website = document.getElementById("website").value;
             let linkedin = document.getElementById("linkedin").value;
             let google_scholar = document.getElementById("google_scholar").value;
@@ -118,13 +123,6 @@
             window.location.href = mailtoLink;
         });
 
-        document.getElementById("position").addEventListener("change", function (event) {
-            if (event.target.value === "Other") {
-                document.getElementById("otherPositionContainer").classList.remove("hidden");
-            } else {
-                document.getElementById("otherPositionContainer").classList.add("hidden");
-            }
-        });
 
         function getQueryParam(param) {
             const urlSearchParams = new URLSearchParams(window.location.search);
